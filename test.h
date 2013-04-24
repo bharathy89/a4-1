@@ -4,7 +4,6 @@
 #include <stdlib.h>
 #include <iostream>
 #include <math.h>
-
 #include "Function.h"
 #include "Pipe.h"
 #include "DBFile.h"
