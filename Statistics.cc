@@ -44,7 +44,7 @@ void Statistics::Read(char *fromWhere) {
     string relName;
     readFile >> start;
     
-    while (!strcmp(start.c_str(), "RelationStart")) {
+    while (!strcmp(start.c_str(), "RelationBegin")) {
         start = "NULL";
         double tmp;
         string tmp_str;
@@ -69,7 +69,7 @@ void Statistics::Write(char *fromWhere) {
     ofstream writeFile (fromWhere, ios_base::out | ios_base::trunc);
     
     for (map<string, RelationData> ::iterator mapIerator = relationMap.begin(); mapIerator != relationMap.end(); mapIerator++)  {
-        writeFile << "RelationStart" << endl;
+        writeFile << "RelationBegin" << endl;
         writeFile << mapIerator->first << endl;
         writeFile << mapIerator->second.getNumTuples() << endl;
         
